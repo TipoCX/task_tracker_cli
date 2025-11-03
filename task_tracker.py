@@ -29,7 +29,7 @@ def main():
         free_id = len(tasks)
         while tasks.get(str(free_id))!=None:
             free_id+=1
-        tasks[free_id] = {'description': argv[2], 'status': 'todo', 'createdAt': strftime("%d/%m/%G %X"), 'updatedAt': strftime("%d/%m/%G %X")}
+        tasks[free_id] = {'id': free_id ,'description': argv[2], 'status': 'todo', 'createdAt': strftime("%d/%m/%G %X"), 'updatedAt': strftime("%d/%m/%G %X")}
         write()
         return
 
@@ -82,17 +82,17 @@ def main():
             if argv[2] == 'todo':
                 for t in tasks.keys():
                     if tasks[t]['status'] == 'todo':
-                        print(f'{tasks[t]['description']} is {tasks[t]['status']}')
+                        print(f'id:{tasks[t]['id']} - {tasks[t]['description']} is {tasks[t]['status']}')
                 return
             elif argv[2] == 'in-progress':
                 for t in tasks.keys():
                     if tasks[t]['status'] == 'in-progress':
-                        print(f'{tasks[t]['description']} is {tasks[t]['status']}')
+                        print(f'id:{tasks[t]['id']} - {tasks[t]['description']} is {tasks[t]['status']}')
                 return
             elif argv[2] == 'done':
                 for t in tasks.keys():
                     if tasks[t]['status'] == 'done':
-                        print(f'{tasks[t]['description']} is {tasks[t]['status']}')
+                        print(f'id:{tasks[t]['id']} - {tasks[t]['description']} is {tasks[t]['status']}')
                 return
             else:
                 print("check status requested")
@@ -100,7 +100,7 @@ def main():
         else:
             #if no other argument is presented, it shows all tasks
             for t in tasks.keys():
-                print(f'{tasks[t]['description']} is {tasks[t]['status']}')
+                print(f'id:{tasks[t]['id']} - {tasks[t]['description']} is {tasks[t]['status']}')
             return
 
 main()
