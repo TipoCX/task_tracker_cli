@@ -20,11 +20,11 @@ all tasks will be defaulted to todo status
 ```update <task id> <description>```
 
 ### change task status
-``` make-todo <task id> ```
+``` mark-todo <task id> ```
 
-``` make-in-progress <task id> ```
+``` mark-in-progress <task id> ```
 
-``` make-done <task id> ```
+``` mark-done <task id> ```
 
 ### delete task
 ``` delete <task id> ```
