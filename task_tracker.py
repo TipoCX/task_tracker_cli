@@ -75,6 +75,16 @@ def main():
             print("\nthe provided id doesn't exsists\n")
         return
 
+    # i've made this function last minute to add the function to get back a task to todo
+    if argv[1] == 'mark-todo':
+        if tasks.get(argv[2])!=None:
+            tasks[argv[2]]['status'] = 'todo'
+            tasks[argv[2]]['updatedAt'] = strftime("%d/%m/%G %X")
+            write()
+        else:
+            print("\nthe provided id doesn't exsists\n")
+        return
+
     #O(n) checks the amount of arguments and shows the desired tasks
     if argv[1] == "list":
         if len(argv)>2:
