@@ -1,5 +1,8 @@
 # Task Tracker CLI
 
+proyect idea taken from roadmap practice proyects:
+https://roadmap.sh/projects/task-tracker
+
 ## instructions
 ### add task
 ``` add <description> ```
